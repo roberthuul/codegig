@@ -1,0 +1,27 @@
+<%- include('include/header.ejs') %>
+  <div class="container">
+    <section id="gigs" class="container">
+      <h1>All Gigs</h1>
+        <% if(gigs.length > 0) {
+          gigs.forEach(element => { %>
+            <div class="gig">
+              <h3><%= element.dataValues.title %></h3>
+              <p><%= element.dataValues.description %></p>
+              <ul>
+                <li>Budget: <%= element.dataValues.budget %></li>
+                <li><a href="#" class="btn btn-reverse">Apply Now</a></li>
+              </ul>
+              <div class="tech">
+                <small>Technologies Needed: <span><%= element.dataValues.technologies %></span></small>
+              </div>
+            </div>
+          <% }) } else { %>
+            <p>No gigs available</p>
+
+          <% } %>
+    </section>
+  </div>
+  
+</body>
+
+</html>
