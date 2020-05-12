@@ -7,9 +7,6 @@ const Op = Sequelize.Op;
 
 router.get('/', (req, res) => Gig.findAll()
 .then(gigs => { 
-    gigs.forEach(element => {
-        console.log('element',element.dataValues.title);
-    });
     res.render('gigs', {
         gigs
     });
